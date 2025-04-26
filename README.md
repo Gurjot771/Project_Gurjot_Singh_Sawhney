@@ -54,6 +54,7 @@ Evaluation Metric for the network: Accuracy was the primary measure for the eval
 ![Training Loss, Validation Loss and Val F1 (Macro)](https://github.com/user-attachments/assets/177d0302-524f-495e-a31c-ea7bef411dbb)
 
 The overall accuracy is around 60% on test set and the F1 score have been disclosed below for all classes-
+|                    Resnet 18                     | 
 | Class          | Precision | Recall   | F1-Score |
 |----------------|-----------|----------|----------|
 | antelope       | 0.6852    | 0.5606   | 0.6167   |
