@@ -8,7 +8,7 @@ The dataset is taken from Kaggle and contains approximately 5.4K coloured images
 
 The input is 150X150 or 224x224 pixel-sized (RGB) images of animals belonging to 90 classes. The output is the name of the animal
 Each image from the original dataset has been augmented 10 times. The final data set includes the original images( which are resized and scaled down to the specified dimensions) along with augmented images. Hence, for every class, there are 660 images which are divided among test, train and validation dataset.
-Initially Vgg like networks were used on the model but showed lesser efficiency. Resnet18 model architecture is used in my current project.
+Initially Vgg like networks were used on the model but showed lesser efficiency. The accuracy ranged from 27% to 47% on test dataset. Resnet18 model architecture is used in my current project.
 
 (Source- https://www.kaggle.com/datasets/iamsouravbanerjee/animal-image-dataset-90-different-animals)
 
