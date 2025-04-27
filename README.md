@@ -55,8 +55,5 @@ Evaluation Metric for the network: Accuracy was the primary measure for the eval
 ![Training Loss, Validation Loss and Val F1 (Macro)](https://github.com/user-attachments/assets/177d0302-524f-495e-a31c-ea7bef411dbb)
 
 The overall accuracy is around 60% on test set and the F1 score have been disclosed below for all classes-
-A comparison with a VGG Network having many layers is given for the same which gave 47 percent accuracy. The architecture of Vgg network is also provided after this section. 
-![Training Loss, Validation Loss and F1 Score](https://github.com/user-attachments/assets/f5a60929-7f33-4064-9aa8-da6b57ac94c7)
 
-<span style="background-color: #ffb3b3;">This table compares the performance of ResNet-18 and VGG models across various classes.  Metrics include Precision, Recall, and F1-Score. The classes where Vgg network is performing better are made bold. In the rest cases, the Vgg network performs very similar or worse then resnet network.
 
