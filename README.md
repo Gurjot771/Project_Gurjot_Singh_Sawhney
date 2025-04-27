@@ -11,6 +11,7 @@ Each image from the original dataset has been augmented 10 times. The final data
 Initially Vgg like networks were used on the model but showed lesser efficiency. Resnet18 model architecture is used in my current project.
 
 (Source- https://www.kaggle.com/datasets/iamsouravbanerjee/animal-image-dataset-90-different-animals)
+
 (Source for the Zip file for augmented dataset on which model is trained- https://drive.google.com/drive/folders/1M6wfgb9GClirqBbNUiKIEfRPIZWsEOEK?usp=drive_link)
 
 # Architecture: ResNet-18
