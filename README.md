@@ -4,10 +4,11 @@ Project Proposal-
 This project aims to develop an image classification system capable of accurately identifying 90 distinct animal species from an original dataset of approximately 5400 images. 
 
 # Dataset of Images-  
-The dataset is taken from Kaggle and contains approximately 5.4K coloured images of varying size and dimensions in .jpg format. The dataset would first be modified on my local device to resize all the images to 150x150 pixel dimensions.
-The input is 150X150 pixel-sized (RGB) images of animals belonging to 90 classes. The output is the name of the animal
+The dataset is taken from Kaggle and contains approximately 5.4K coloured images of varying size and dimensions in .jpg format. The dataset would first be modified on my local device to resize all the images to 224x224 pixel dimensions.The augmentations include- Random horizontalflip (p=0.5), Random vertical flip (p=0.05), Affine transformations (degrees=(-13,13), scale=(0.87, 1.07)), Random Resized Cropping (size=(150, 150), scale=(0.55, 0.8), ratio=(0.75, 1.66)), changing color jitter(brightness=.15, contrast=0.15, saturation=0.15, hue=0.075). Though there was a bug in my code and original images (which were supposed to be just resized to 224x224 pixel) were 150x150 pixel dimensions. Hence, in my code I have reimplemented a resize to 224x224 pixel dimensions during loading of images.
+
+The input is 150X150 or 224x224 pixel-sized (RGB) images of animals belonging to 90 classes. The output is the name of the animal
 Each image from the original dataset has been augmented 10 times. The final data set includes the original images, which are resized and scaled down to the specified dimensions. Hence, for every class there are 660 images which are divided among test, train and validation dataset.
-Initially Vgg like networks were used on the model but showed lesser efficiency. Resnet18 model architecture is used in my current project. It uses all the images rescaled in the model itself to 224x224 pixel dimensions from 150x150 pixel dimensions. 
+Initially Vgg like networks were used on the model but showed lesser efficiency. Resnet18 model architecture is used in my current project.
 
 (Source- https://www.kaggle.com/datasets/iamsouravbanerjee/animal-image-dataset-90-different-animals)
 
