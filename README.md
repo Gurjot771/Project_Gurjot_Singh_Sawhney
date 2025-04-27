@@ -38,7 +38,7 @@ ResNet18 Function:
 Creates a ResNet-18 model with the layer configuration [2, 2, 2, 2].
 Takes the number of classes as input.
 
-Though this function is being created but in the rest of the code ResNet(BasicBlock, [2, 2, 2, 2], num_classes=num_classes) is being used instead of calling the function
+Though this function is being created but in the rest of the code ResNet(BasicBlock, [2, 2, 2, 2], num_classes) is being used instead of calling the function
 
 # Other Parameters
 Optimiser: AdamsW to implement weight decay to punish the network from overfitting. 
