@@ -4,15 +4,15 @@ Project Proposal-
 This project aims to develop an image classification system capable of accurately identifying 90 distinct animal species from an original dataset of approximately 5400 images. 
 
 # Dataset of Images-  
-The dataset is taken from Kaggle and contains approximately 5.4K coloured images of varying size and dimensions in .jpg format. The dataset would first be modified on my local device to resize and augment all the images to 224x224 pixel dimensions.The augmentations include- Random horizontalflip (p=0.5), Random vertical flip (p=0.05), Affine transformations (degrees=(-13,13), scale=(0.87, 1.07)), Random Resized Cropping (size=(150, 150), scale=(0.55, 0.8), ratio=(0.75, 1.66)), changing color jitter(brightness=.15, contrast=0.15, saturation=0.15, hue=0.075). Though there was a bug in my code and original images (which were supposed to be just resized to 224x224 pixel) were 150x150 pixel dimensions. Hence, in my code I have reimplemented a resize to 224x224 pixel dimensions during loading of images.
+The dataset is taken from Kaggle and contains approximately 5.4K coloured images of varying size and dimensions in .jpg format. The dataset would first be modified on my local device to resize and augment all the images to 224x224 pixel dimensions.The augmentations include- Random horizontalflip (p=0.5), Random vertical flip (p=0.05), Affine transformations (degrees=(-13,13), scale=(0.87, 1.07)), Random Resized Cropping (size=(150, 150), scale=(0.55, 0.8), ratio=(0.75, 1.66)), changing color jitter(brightness=.15, contrast=0.15, saturation=0.15, hue=0.075). Though there was a bug in my code and original images (which were supposed to be just resized to 224x224 pixel and added along with augmented images) were 150x150 pixel dimensions. Hence in my code in the training, I have reimplemented a resize to 224x224 pixel dimensions during loading of images.
 
 The input is 150X150 or 224x224 pixel-sized (RGB) images of animals belonging to 90 classes. The output is the name of the animal
-Each image from the original dataset has been augmented 10 times. The final data set includes the original images, which are resized and scaled down to the specified dimensions. Hence, for every class there are 660 images which are divided among test, train and validation dataset.
+Each image from the original dataset has been augmented 10 times. The final data set includes the original images( which are resized and scaled down to the specified dimensions) along with augmented images. Hence, for every class, there are 660 images which are divided among test, train and validation dataset.
 Initially Vgg like networks were used on the model but showed lesser efficiency. Resnet18 model architecture is used in my current project.
 
 (Source- https://www.kaggle.com/datasets/iamsouravbanerjee/animal-image-dataset-90-different-animals)
 
-(Source for the Zip file for augmented dataset on which model is trained- https://drive.google.com/drive/folders/1M6wfgb9GClirqBbNUiKIEfRPIZWsEOEK?usp=drive_link)
+(Source for the Zip file for dataset on which the model is trained- https://drive.google.com/drive/folders/1M6wfgb9GClirqBbNUiKIEfRPIZWsEOEK?usp=drive_link)
 
 # Architecture: ResNet-18
 
@@ -50,7 +50,7 @@ The final division per class becomes- 449(train), 79(validation), 132(test)
 Early stoppage function has been applied during the training- 
 It has been defined during the training that if average validation loss does not decrease for X(set to 8) epochs then the training stops to provide best training weights. 
 # Evaluation Metric
-Evaluation Metric for the network: Accuracy was the primary measure for the evaluation. Recall and precision(hence the F1 score) were also seen along with the accuracy in every epoch. In my database, there is no significant class imbalance and F1 score is not an important factor with that respect. Though, F1 score did provide meaningful insights where network was not performing equally well on all of the classes. 
+Evaluation Metric for the network: Accuracy was the primary measure for the evaluation. Recall and precision(hence the F1 score) were also seen along with the accuracy in every epoch on validation dataset . In my database, there is no significant class imbalance and F1 score is not an important factor with that respect. Though, F1 score did provide meaningful insights where network was not performing equally well on all of the classes. 
 
 # Performance of the network: 
 
